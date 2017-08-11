@@ -1,0 +1,7 @@
+git hub
+git add hola
+git commit -m "algo"
+git push  ; subir
+git pull;
+git checkout -b 
+git merge>branch
