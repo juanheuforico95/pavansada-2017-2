@@ -20,13 +20,13 @@ int constructor(char * message, char * scrabble) {
     for (i = 0; message_copied[i] != '\0'; i++) {
         if(message_copied[i] != ' ' && message_copied[i] != '*') {
             free(message_copied);
-	    printf("FAIL!: The scrabble can not write the sentence.\n");
+	    printf("The scrabble can not write the sentence.\n");
             return 0;
         }
 	
     }
     free(message_copied);
-    printf("GOOD JOB!: The scrabble can write the sentence.\n");
+    printf("good job!: The scrabble can write the sentence.\n");
     return 1;
 
 }
