@@ -4,7 +4,7 @@
 #define LIMITE 50
 int main() {
     int bandera=0;
-    char cadena1[LIMITE] ="";
+    char cadena1[LIMITE] ="asfaf sds qwertoy";
     int numletras=0;
     int posblank=0;
 
@@ -15,7 +15,7 @@ int main() {
         }else{
          if(cadena1[i]==' '){
             posblank=i;
-            // printf("posicion %d\n", posblank);    
+            // printf("posicion %d\n", posblank);
 
         }
         }
@@ -23,9 +23,9 @@ int main() {
     if(cadena1[0]!=' ' && posblank==0){
         numletras=strlen(cadena1);
     }else{
-    
+
         numletras=(strlen(cadena1)-1)-posblank;
     }
-        printf("Num. letras ultima palabra %d\n", (numletras));    
+        printf("Num. letras ultima palabra %d\n", (numletras));
             return 0;
 }

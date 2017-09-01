@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include "minunit.h"
 #include "dict.h"
 
@@ -14,13 +15,37 @@
 
 int testsRun = 0;
 
-static char * testUnit() {
-  muAssert("error, testUnit 1 != 1", 1 == 1);
+static char *testInitDictionary()
+{
+  unsigned int size = 4;
+  int errorCode;
+  Dict *myDictionary = initDictionary(size, &errorCode);
+  muAssert("myDictionary size must be 4", myDictionary->size == 4);
+  muAssert("myDictionary errorCode must be 0", errorCode == 0);
+
   return 0;
 }
 
+static char *testUpsertDictionary()
+{
+  unsigned int size = 1;
+  int errorCode;
+  Dict *myDictionary = initDictionary(size, &errorCode);
+  int value = 1;
+  upsertDictionary(myDictionary, "uno", (void *) &value, &errorCode);
+
+  muAssert("myDictionary errorCode must be 0", errorCode == 0);
+  muAssert("myDictionary errorCode must be 0", strcmp(myDictionary->elements[0].key, "uno") == 0);
+  muAssert("myDictionary errorCode must be 0", *((int *)myDictionary->elements[0].value) == value);
+
+  return 0;
+}
+
+
 static char * allTests() {
-  muRunTest(testUnit);
+  muRunTest(testInitDictionary);
+  muRunTest(testUpsertDictionary);
+
   return 0;
 }
 
