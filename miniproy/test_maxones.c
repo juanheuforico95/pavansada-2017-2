@@ -15,14 +15,14 @@
 int testsRun = 0;
 
 static char * testUnit() {
-  int input[]={0,1,1,1,1,1,0,1,0,0,1,0,1,0,1,1};
+  int input[]={0,1,1,1,1};
   int size=(sizeof(input)/sizeof(int));
   int result= findMaxConsecutiveOnes(input, size);
-  muAssert("se calculo mal el numero", result== 5);
+  muAssert("se calculo mal el numero", result== 4);
   return 0;
 }
 static char * testInput() {
-  int input[]={0,1,1,1,1,1,0,1,0,0,1,0,1,0,1,1};
+  int input[]={0,1,1,1,1};
   int size=(sizeof(input)/sizeof(int));
   int result= CheckInput(input, size);
   muAssert("uno de los elementos del arreglo es invalido", result== 0);
