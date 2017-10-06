@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "minunit.h"
-#include "swap.h"
+#include "operations.h"
 
 #define KNRM  "\x1B[0m"
 #define KRED  "\x1B[31m"
@@ -15,13 +15,7 @@
 int testsRun = 0;
 
 static char * testUnit() {
-  int a[] = {2,4,6,7};
-  int b[]={20,30,4,5,6};
-  swap (a,b,sizeof(int)*3);
-  muAssert("error, testUnit 1 != 1", b[0] ==2);
-  muAssert("error, testUnit 1 != 1", b[1]==4);
-//  muAssert("error, the values must be ", b[2] ==6);
-
+  muAssert("error, testUnit 1 != 1", 1 == 1);
   return 0;
 }
 
