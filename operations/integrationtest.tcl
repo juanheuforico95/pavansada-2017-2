@@ -11,14 +11,14 @@ proc reset {} {exec tput sgr0 > /dev/tty}
 eval spawn [lrange $argv 0 end]
 
 expect "Cual es la operacion" {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
-send "suma\r"
+send "add\r"
 send "4\r"
 send "5\r"
 expect "9" {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
 eval spawn [lrange $argv 0 end]
 
 expect "Cual es la operacion" {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
-send "resta\r"
+send "subtract\r"
 send "10\r"
 send "5\r"
 expect "5" {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
