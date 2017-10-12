@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "minunit.h"
 #include "island.h"
 
@@ -13,33 +14,41 @@
 #define RESET "\033[0m"
 
 int testsRun = 0;
-
-static char * testUnit() {
-  muAssert("error, testUnit 1 != 1", 1 == 1);
-  return 0;
+static char * test_unit() {
+	int grid[4][4] = {{0,1,0,0},{1,1,1,0},{0,1,0,0},{1,1,0,0}};
+	int rows = 4, cols = 4, i;
+	int **grid_pointer;
+	grid_pointer = (int **) malloc(sizeof(int *) * rows);
+	for (i = 0; i < rows; i++) {
+		grid_pointer[i] = (int *) malloc(sizeof(int) * cols);
+		grid_pointer[i] = grid[i];
+	}
+	int expected = 16;
+	int result = grid_perimeter(grid_pointer, rows, cols);
+	muAssert("Wrong Perimeter.", result == expected);
+	return 0;
 }
 
-static char * allTests() {
-  muRunTest(testUnit);
-  return 0;
+static char * all_tests() {
+	muRunTest(test_unit);
+	return 0;
 }
-
 int main(int argc, char **argv) {
-  char *result = allTests();
-  if (result != 0) {
-    printf("-_-_-_-_-_-_-_,------,      o \n");
-    printf("_-_-_-_-_-_-_-|   /\\_/\\ \n");
-    printf("-_-_-_-_-_-_-~|__( X .X)  +     + \n");
-    printf("_-_-_-_-_-_-_- \"\"  \"\" \n");
-    printf(KRED "✗ %s \n" RESET, result);
-  }
-  else {
-    printf("-_-_-_-_-_-_-_,------,      o \n");
-    printf("_-_-_-_-_-_-_-|   /\\_/\\ \n");
-    printf("-_-_-_-_-_-_-~|__( ^ .^)  +     + \n");
-    printf("_-_-_-_-_-_-_-  \"\"  \"\" \n");
-    printf(KGRN " ✓ ALL TESTS PASSED \n" RESET);
-  }
-  printf("Tests run: %d\n", testsRun);
-  return result != 0;
+	char *result = all_tests();
+	if (result != 0) {
+		printf("-_-_-_-_-_-_-_,------,      o \n");
+		printf("_-_-_-_-_-_-_-|   /\\_/\\ \n");
+		printf("-_-_-_-_-_-_-~|__( X .X)  +     + \n");
+		printf("_-_-_-_-_-_-_- \"\"  \"\" \n");
+		printf(KRED "✗ %s\n" RESET, result);
+	}
+	else {
+		printf("-_-_-_-_-_-_-_,------,      o \n");
+		printf("_-_-_-_-_-_-_-|   /\\_/\\ \n");
+		printf("-_-_-_-_-_-_-~|__( ^ .^)  +     + \n");
+		printf("_-_-_-_-_-_-_-  \"\"  \"\" \n");
+		printf(KGRN " ✓ ALL TESTS PASSED \n" RESET);
+	}
+	printf("Tests run: %d\n", testsRun);
+	return result != 0;
 }
