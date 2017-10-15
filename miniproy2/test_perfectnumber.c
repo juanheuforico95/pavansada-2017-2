@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "minunit.h"
 #include "perfectnumber.h"
 
@@ -15,7 +16,9 @@
 int testsRun = 0;
 
 static char * testUnit() {
-  muAssert("error, testUnit 1 != 1", 1 == 1);
+  int perfectnumber =28;
+  int result =PerfecNumber(perfectnumber);
+  muAssert("error the expected result is 28", result==perfectnumber);
   return 0;
 }
 
