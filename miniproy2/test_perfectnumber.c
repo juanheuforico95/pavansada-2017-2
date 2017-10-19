@@ -12,9 +12,9 @@
 #define KCYN  "\x1B[36m"
 #define KWHT  "\x1B[37m"
 #define RESET "\033[0m"
+#define perfectnumber 28
 
 int testsRun = 0;
-int perfectnumber =28;
 
 static char * testExpectedInput() {
   int expectednumber=28;
