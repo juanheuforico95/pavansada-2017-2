@@ -1,1 +1,1 @@
-int PerfecNumber(int);
+int isPerfecNumber(int);

@@ -14,16 +14,45 @@
 #define RESET "\033[0m"
 
 int testsRun = 0;
+int perfectnumber =28;
 
-static char * testUnit() {
-  int perfectnumber =28;
-  int result =PerfecNumber(perfectnumber);
-  muAssert("error the expected result is 28", result==perfectnumber);
+static char * testExpectedInput() {
+  int expectednumber=28;
+  int positivenumber=1;
+  if(perfectnumber<0){
+    positivenumber=0;
+  }
+  muAssert("the entry expected is 28", expectednumber==perfectnumber);
+  muAssert("the number must be positive ", positivenumber);
+
+  return 0;
+}
+static char * testPositiveNumber() {
+  int positivenumber=1;
+  if(perfectnumber<0){
+    positivenumber=0;
+  }
+  muAssert("the number must be positive ", positivenumber);
+
+  return 0;
+}
+static char * testIntegerNumber() {
+  muAssert("the number is not interger", perfectnumber==(int)perfectnumber);
+  return 0;
+}
+
+static char * testisPerfectNumber() {
+  int expectedresult=1;
+  int result =isPerfecNumber(perfectnumber);
+  muAssert("error the expected result is 0 ", result==expectedresult);
   return 0;
 }
 
 static char * allTests() {
-  muRunTest(testUnit);
+  muRunTest(testPositiveNumber);
+  muRunTest(testIntegerNumber);
+  muRunTest(testExpectedInput);
+  muRunTest(testisPerfectNumber);
   return 0;
 }
 

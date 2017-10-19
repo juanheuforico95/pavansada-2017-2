@@ -8,10 +8,10 @@
  is equal to 0 then save that number in an array and finally sum all the elements in the arry, if the
  result is equal to the input number then it is a perfect number.
 *Param: input, the number wich you want to know if it is a perfect number
-  return: an int value, wich represen the sum of all its exact dividend numbers.
+  return: an int value, wich represen a bool value, if is 1 means that is a perfect number.
 */
 
-int PerfecNumber(int input){
+int isPerfecNumber(int input){
   int i,j, summation;
   summation=0;
   float modul;
@@ -25,7 +25,20 @@ int PerfecNumber(int input){
     }
   }
   for(i=0;i<j;i++){
+    printf("the dividend Numbers are: %i\n", dividendNumbers[i]);
+
     summation += dividendNumbers[i];
   }
-  return summation;
+  printf("summation= %i\n", summation);
+  if(summation==input){
+    printf("true\n");
+    printf("is a perfect number\n");
+
+    return (1);
+  }else{
+printf("false\n");
+printf("is not a perfect number\n");
+
+    return (0);
+  }
 }

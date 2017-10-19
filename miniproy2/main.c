@@ -1,9 +1,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "perfectnumber.h"
-/* Add function signatures here */
-int main(int argc, char **argv) {
-  /* Start your code here */
-  printf("Hello from main\n");
+#include <stdio.h>
+int main() {
+  int input,result=1;
+  printf("dame el numero que quieras provar que sea perfecto:\n");
+  scanf("%d",&input);
+  result=isPerfecNumber(input);
   return 0;
 }
