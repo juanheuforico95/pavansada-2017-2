@@ -1,0 +1,17 @@
+
+pcre/bin/pcre2-config
+pcre/bin/pcre2grep
+pcre/bin/pcre2test
+pcre/include/pcre2posix.h
+pcre/lib/libpcre2-8.la
+pcre/lib/libpcre2-8.so
+pcre/lib/libpcre2-8.so.0
+*.a
+*.la
+*.so
+*.2
+*.0
+*.pc
+pcre/share/doc/pcre2/COPYING
+*.html
+*.3

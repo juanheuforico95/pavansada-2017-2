@@ -7,8 +7,6 @@
 	char * value = getenv("ISLAND_DEBUG");\
 	if (value != NULL && !strcmp(value, "t")) printf("%s", msg);\
 } while(0);
-
-
 int main(int argc, char **argv) {
 
 	int **island;

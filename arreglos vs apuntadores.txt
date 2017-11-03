@@ -1,0 +1,10 @@
+arreglso vs apuntadores
+int b[5] 
+casilla
+la variable b te regresa el valor del dato almasenado en la posicion 0 del arreglo
+p[2] = *¿p+2*sizeof(int)=40;
+es35
+ t15
+er15
+katas15
+pro 20
